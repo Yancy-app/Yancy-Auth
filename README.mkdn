@@ -1,0 +1,25 @@
+[![Build Status](https://travis-ci.org/Yancy-app/Yancy-Auth.svg?branch=master)](https://travis-ci.org/Yancy-app/Yancy-Auth)
+[![Coverage Status](https://coveralls.io/repos/Yancy-app/Yancy-Auth/badge.svg?branch=master)](https://coveralls.io/r/Yancy-app/Yancy-Auth?branch=master)
+
+# NAME
+
+Yancy::Auth - Authentication plugins for Yancy v2
+
+# VERSION
+
+version 2.000
+
+# DESCRIPTION
+
+Each auth chooses which user is logging in.
+
+# AUTHOR
+
+Doug Bell <preaction@cpan.org>
+
+# COPYRIGHT AND LICENSE
+
+This software is copyright (c) 2026 by Doug Bell.
+
+This is free software; you can redistribute it and/or modify it under
+the same terms as the Perl 5 programming language system itself.

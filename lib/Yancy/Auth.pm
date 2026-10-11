@@ -1,4 +1,7 @@
 package Yancy::Auth;
+# ABSTRACT: Authentication plugins for Yancy v2
+our $VERSION = '2.000';
+
 use Mojo::Base -base, -signatures;
 use Scalar::Util qw( blessed );
 use Mojo::JSON qw( true false );

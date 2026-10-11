@@ -1,0 +1,109 @@
+{
+   "abstract" : "Authentication plugins for Yancy v2",
+   "author" : [
+      "Doug Bell <preaction@cpan.org>"
+   ],
+   "dynamic_config" : 0,
+   "generated_by" : "Dist::Zilla version 6.036, CPAN::Meta::Converter version 2.150010",
+   "license" : [
+      "perl_5"
+   ],
+   "meta-spec" : {
+      "url" : "http://search.cpan.org/perldoc?CPAN::Meta::Spec",
+      "version" : 2
+   },
+   "name" : "Yancy-Auth",
+   "no_index" : {
+      "directory" : [
+         "eg",
+         "examples",
+         "inc",
+         "share",
+         "t",
+         "xt"
+      ]
+   },
+   "prereqs" : {
+      "configure" : {
+         "requires" : {
+            "ExtUtils::MakeMaker" : "0"
+         }
+      },
+      "runtime" : {
+         "requires" : {
+            "Authen::SASL" : "0",
+            "Crypt::Passphrase" : "0",
+            "Crypt::Passphrase::Argon2" : "0",
+            "Crypt::SysRandom" : "0",
+            "Data::GUID" : "0",
+            "Email::Sender::Transport::SMTP" : "0",
+            "Email::Stuffer" : "0",
+            "MIME::Base64" : "0",
+            "Mojo::SQLite" : "0",
+            "Web::Authn" : "0",
+            "Yancy" : "0",
+            "perl" : "5.040"
+         }
+      },
+      "test" : {
+         "recommends" : {
+            "CPAN::Meta" : "2.120900"
+         },
+         "requires" : {
+            "ExtUtils::MakeMaker" : "0",
+            "File::Spec" : "0",
+            "IO::Handle" : "0",
+            "IPC::Open3" : "0",
+            "Test::More" : "0"
+         }
+      }
+   },
+   "provides" : {
+      "Yancy::Auth" : {
+         "file" : "lib/Yancy/Auth.pm",
+         "version" : "2.000"
+      },
+      "Yancy::Auth::Email" : {
+         "file" : "lib/Yancy/Auth/Email.pm",
+         "version" : "2.000"
+      },
+      "Yancy::Auth::Password" : {
+         "file" : "lib/Yancy/Auth/Password.pm",
+         "version" : "2.000"
+      },
+      "Yancy::Auth::WebAuthn" : {
+         "file" : "lib/Yancy/Auth/WebAuthn.pm",
+         "version" : "2.000"
+      },
+      "Yancy::User" : {
+         "file" : "lib/Yancy/User.pm",
+         "version" : "2.000"
+      },
+      "Yancy::User::Schema::Sessions" : {
+         "file" : "lib/Yancy/User/Schema/Sessions.pm",
+         "version" : "2.000"
+      },
+      "Yancy::User::Schema::Users" : {
+         "file" : "lib/Yancy/User/Schema/Users.pm",
+         "version" : "2.000"
+      }
+   },
+   "release_status" : "stable",
+   "resources" : {
+      "bugtracker" : {
+         "web" : "https://github.com/Yancy-app/Yancy-Auth/issues"
+      },
+      "homepage" : "https://github.com/Yancy-app/Yancy-Auth",
+      "repository" : {
+         "type" : "git",
+         "url" : "https://github.com/Yancy-app/Yancy-Auth.git",
+         "web" : "https://github.com/Yancy-app/Yancy-Auth"
+      }
+   },
+   "version" : "2.000",
+   "x_authority" : "cpan:PREACTION",
+   "x_generated_by_perl" : "v5.42.0",
+   "x_serialization_backend" : "Cpanel::JSON::XS version 4.40",
+   "x_spdx_expression" : "Artistic-1.0-Perl OR GPL-1.0-or-later"
+}
+
