@@ -21,11 +21,7 @@ sub new( $class, $app, @args ) {
   if (!$self->model->isa('Yancy::User')) {
     die 'model must be a Yancy::User';
   }
-
-  # CREATE TABLE webauthn_credentials
-  # CREATE TABLE webauthn_challenges
-  # TODO: Create generic Yancy::Model migrations system...
-  # TODO: Yancy::Plugin::WebAuthn configures things?
+  $self->model->migrate( __PACKAGE__ );
 
   $app->routes->get('/auth/passkey')->to(cb => \&entrypoint);
   $app->routes->get('/auth/passkey/register')->to(cb => sub ($c) {
