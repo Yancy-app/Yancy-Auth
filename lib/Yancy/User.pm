@@ -55,6 +55,22 @@ sub add_auth( $self, $auth ) {
 
 }
 
+sub require_permission($self, $permission) {
+  return sub($c) {
+    my $user = $self->current_user($c);
+    if (!$user) {
+      $c->render('unauthorized', status => 401);
+      return 0;
+    }
+    my $perm = $self->schema('user_permissions')->get([$user->{user_id},$permission]);
+    if (!$perm) {
+      $c->log->warn(sprintf 'user "%s" lacks permission "%s"', $user->{login}, $permission);
+      return 0;
+    }
+    return 1;
+  };
+}
+
 1;
 __DATA__
 
@@ -88,3 +104,6 @@ CREATE TABLE sessions (
 DROP TABLE sessions;
 DROP TABLE user_permissions;
 DROP TABLE users;
+
+@@ unauthorized.html.ep
+Unauthorized
