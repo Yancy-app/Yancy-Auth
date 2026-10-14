@@ -117,8 +117,8 @@ sub new($class, $app, @args) {
     my $self = $class->SUPER::new($app, @args);
 
     my $route = routify( $app, $self->route );
-    $route->get( '' )->to( cb => currym( $self, '_get_login' ) )->name( $self->route_name('entrypoint') );
-    $route->post( '' )->to( cb => currym( $self, '_post_login' ) )->name( $self->route_name('login') );
+    $route->get( '' )->to( cb => currym( $self, '_get_login' ), hidden => 1 )->name( $self->route_name('entrypoint') );
+    $route->post( '' )->to( cb => currym( $self, '_post_login' ), hidden => 1 )->name( $self->route_name('login') );
 
     return $self;
 }

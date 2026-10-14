@@ -23,19 +23,19 @@ sub new( $class, $app, @args ) {
   }
   $self->model->migrate( __PACKAGE__ );
 
-  $app->routes->get('/auth/passkey')->to(cb => \&entrypoint);
+  $app->routes->get('/auth/passkey')->to(cb => \&entrypoint, hidden => 1);
   $app->routes->get('/auth/passkey/register')->to(cb => sub ($c) {
       $self->register_begin($c);
-    });
+    }, hidden => 1);
   $app->routes->post('/auth/passkey/register')->to(cb => sub ($c) {
       $self->register_complete($c);
-    });
+    }, hidden => 1);
   $app->routes->get('/auth/passkey/login')->to(cb => sub ($c) {
       $self->login_begin($c);
-    });
+    }, hidden => 1);
   $app->routes->post('/auth/passkey/login')->to(cb => sub ($c) {
       $self->login_complete($c);
-    });
+    }, hidden => 1);
   $app->routes->get('/auth/passkey/logout')->to(cb => sub ($c) {
       if (my $user = $self->model->current_user($c)) {
         my $session = $self->model->current_session($c);
@@ -45,7 +45,7 @@ sub new( $class, $app, @args ) {
       return $c->render(
         json => { ok => JSON::PP::true },
       );
-    });
+    }, hidden => 1);
 }
 
 sub entrypoint( $c ) {

@@ -28,8 +28,8 @@ sub new( $class, $app, @args ) {
   }
   $self->model->migrate( __PACKAGE__ );
 
-  $app->routes->get('/auth/email')->to(cb => sub($c) { $self->show_form($c) });
-  $app->routes->post('/auth/email')->to(cb => sub($c) { $self->send_code($c) });
+  $app->routes->get('/auth/email',)->to(cb => sub($c) { $self->show_form($c) }, hidden => 1);
+  $app->routes->post('/auth/email')->to(cb => sub($c) { $self->send_code($c) }, hidden => 1);
 }
 
 sub send_code($self, $c) {
