@@ -18,6 +18,7 @@ has log => ;
 has model => sub { die 'model is required' };
 has provider_name => sub { die 'provider_name is required' };
 has route => sub { '/auth/' . shift->provider_name };
+has allow_register => sub { 1 };
 
 sub new($class, $app, @args) {
   my $self = $class->SUPER::new(@args);
